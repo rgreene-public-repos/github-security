@@ -1,0 +1,55 @@
+name: "CodeQL"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript', 'csharp' ]
+        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }} 
+
+    # Build the Console App
+    - run: |
+        if [[ ${{ matrix.language }} != 'csharp' ]]; then exit 0; fi
+        echo "Run, Build Application using script ${{ matrix.language }}"
+        cd CodeExamination/TestApp/
+        dotnet build
+
+    # Build the Node App
+    - run: |
+        if [[ ${{ matrix.language }} != 'javascript' ]]; then exit 0; fi
+        echo "Run, Build Application using script ${{ matrix.language }}"
+        cd CodeExamination/react-app/
+        npm install
+        npm run build
+
+    # Analysis and publish results
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: "/language:${{matrix.language}}"    

@@ -1,0 +1,7 @@
+name: rgreene-insight-organisation/codeql-queries
+version: 1.0.1
+groups: [csharp]
+extractor: csharp
+dependencies:
+  codeql/csharp-all: "*"
+  codeql/typos: "*"

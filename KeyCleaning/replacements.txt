@@ -1,0 +1,6 @@
+PASSWORD                        # Replace literal string 'PASSWORD' with '***REMOVED***' (default)
+PASSWORD2==>examplePass         # replace with 'examplePass' instead
+PASSWORD3==>                    # replace with the empty string
+regex:password=\w+==>password=  # Replace, using a regex
+
+
