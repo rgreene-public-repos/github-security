@@ -1,4 +1,4 @@
-name: rgreene-insight-organisation/codeql-queries
+name: rgreene-public-repos/github-security
 version: 1.0.1
 groups: [csharp]
 extractor: csharp
