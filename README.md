@@ -5,7 +5,7 @@ This repository holds a number of different examples of GitHub Security processe
 <img src="https://secure.meetupstatic.com/photos/event/d/c/f/c/clean_510776572.jpeg"
      alt="Perth Azure User Group" />
 
-This was put together for use at the Perth Azure User Group meetup [11th march 2023](https://www.meetup.com/en-AU/perthazug/).  TheA PDF of the [presentation](./Azure User Group - CodeQL 13Mar2023.pdf) is also avaiable for download in the presentation folder. 
+This was put together for use at the Perth Azure User Group meetup [11th march 2023](https://www.meetup.com/en-AU/perthazug/).  TheA PDF of the [presentation](https://./presentation/Azure User Group - CodeQL 13Mar2023.pdf) is also avaiable for download in the presentation folder. 
 
 ## Code Examination
 Details and instructions on scanning code for bugs, security isseus and code smells using Github CodeQL language queries.
