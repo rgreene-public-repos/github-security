@@ -37,13 +37,13 @@ codeql/codeql resolve languages
 codeql/codeql database create TestAppDB --source-root=TestApp --language=csharp --overwrite
 
 ## Run the Security features in SARIF format ##
-codeql/codeql database analyze TestAppDB --threads=1  --format=sarif-latest --output=results-csharp.sarif "codeql\qlpacks\codeql\csharp-queries\0.5.4\Security Features"
+codeql/codeql database analyze TestAppDB --threads=4  --format=sarif-latest --output=results-csharp.sarif "codeql\qlpacks\codeql\csharp-queries\0.5.4\Security Features"
 
 ## Run the Security features in CSV format note queries are already executed ##
 codeql/codeql database analyze TestAppDB --threads=1  --format=CSV --output=results-csharp.csv "codeql\qlpacks\codeql\csharp-queries\0.5.4\Security Features"
 
 ## Run General code qulaity check in CSV format ##
-codeql/codeql database analyze TestAppDB --threads=1  --format=CSV --output=results-csharp.csv "codeql\qlpacks\codeql\csharp-queries\0.5.4\Bad Practices"
+codeql/codeql database analyze TestAppDB --threads=4  --format=CSV --output=results-csharp.csv "codeql\qlpacks\codeql\csharp-queries\0.5.4\Bad Practices"
 
 ## Run General code qulaity check in CSV format ##
 codeql/codeql database analyze TestAppDB --threads=4  --format=CSV --output=results-csharp.csv "codeql\qlpacks\codeql\csharp-queries\0.5.4\Likely Bugs"
