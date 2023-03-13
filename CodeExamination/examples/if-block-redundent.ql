@@ -9,6 +9,9 @@
  *       maintainability
  */
 
+  // See original code from GitHub
+  // https://codeql.github.com/docs/codeql-language-guides/basic-query-for-csharp-code/
+
 import csharp
 
 from IfStmt ifstmt, BlockStmt block
